@@ -1,7 +1,6 @@
-function [output] = logTransform(input, c)
-%LOGTRANSFORM Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [outputImage] = logTransform(inputImage, c)
+    [M,N,C] = size(inputImage);
+    one = ones(M,N,C,'double');
+    outputImage = c*log(inputImage+one);
 end
 
