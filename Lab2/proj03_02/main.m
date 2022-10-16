@@ -2,30 +2,41 @@ clear;
 
 close all;
 
-%lower camel case for function
-%snake case for variable
-
 input_image = imread("Fig.tif");
-
-posX = zeros(256,"single");
-
-for i = 1:256
-    posX(i) = i-1;
-end
 
 [hist_vector] = imageHist(input_image);
 
-[hist_equal] = histEqualization(input_image);
+[outImage,T] = histEqualization(input_image);
 
+[hist_vector2] = imageHist(outImage);
 
-figure(1);
+graph_fig = figure(1);
+plot(hist_vector, LineWidth = 1,Color="red");
+title("Histogram of Original");
+img = frame2im(getframe(graph_fig));
+imwrite(img,"Histogram of Original.jpg");
 
-subplot(1,1,1);imshow(input_image);title("Original");
+graph_fig = figure(2);
+stairs(T,LineWidth = 1,Color="blue");
+title("Histogram equalization transform function");
+img = frame2im(getframe(graph_fig));
+imwrite(img,"Histogram equalization transform function.jpg");
 
-figure(2);
-plot(hist_vector,LineWidth = 1,Color="red");
-title("Historam of Original");
-
-figure(3);
-stairs(hist_equal,LineWidth = 1,Color="blue");
+graph_fig = figure(3);
+plot(hist_vector2,LineWidth = 1,Color="green");
 title("Histogram after equalization");
+img = frame2im(getframe(graph_fig));
+imwrite(img,"Histogram after equalization.jpg");
+
+
+figure(4);
+subplot(1,2,1);
+imshow(input_image);
+title("Image of Original");
+imwrite(input_image,"Image of Original.jpg");
+
+subplot(1,2,2);
+imshow(outImage);
+title("Image after equalization");
+imwrite(outImage,"Image after equalization.jpg");
+
