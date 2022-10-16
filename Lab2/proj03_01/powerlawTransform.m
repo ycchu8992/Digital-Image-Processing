@@ -1,7 +1,5 @@
-function [output] = powerlawTransform(inputImage,c,r)
-%POWERLAWTRANSFORM Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [outputImage] = powerlawTransform(inputImage,c,r)
+   temp = c*(inputImage.^r);
+   outputImage = temp;
 end
 

@@ -32,6 +32,6 @@ for i = 0:1:4
     [output] = powerlawTransform(inputImage,c,r);
     outputImage = im2single(uint8(output));
     subplot(2,3,i+2);imshow(outputImage);title("powerLaw:gamma = " + gammaValue);
-    filename = "powerLawWithGamma_"+gammaValue+".jpg";
+    filename = "powerLawWithGamma"+ gammaValue+".jpg";
     imwrite(outputImage,filename);
 end
