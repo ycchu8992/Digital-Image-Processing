@@ -9,4 +9,3 @@ function [hist_vector] = imageHist(input_image)
     end
     hist_vector = single(hist_vector_temp);
 end
-
