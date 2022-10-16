@@ -8,7 +8,7 @@ function [outImage,T] = histEqualization(input_image)
     
     [hist_temp] = imageHist(input_image);
 
-    hist_temp = (hist_temp/single(M*N));
+    hist_temp = hist_temp/single(M*N);
     
     for i = 1:256
         if i == 1;
@@ -23,7 +23,7 @@ function [outImage,T] = histEqualization(input_image)
     for i = 1:M
         for j = 1:N
             index = uint8(input_image(i,j));
-            image(i,j) = uint8(S(index+1));
+            image(i,j) = round(S(index+1),0);
         end
     end
     

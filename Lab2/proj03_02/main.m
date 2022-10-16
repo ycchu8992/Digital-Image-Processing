@@ -2,7 +2,7 @@ clear;
 
 close all;
 
-input_image = imread("Fig.tif");
+input_image = imread("Fig0308(a)(fractured_spine).tif");
 
 [hist_vector] = imageHist(input_image);
 
