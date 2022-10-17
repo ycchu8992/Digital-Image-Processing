@@ -28,7 +28,6 @@ title("Histogram after equalization");
 img = frame2im(getframe(graph_fig));
 imwrite(img,"Histogram after equalization.jpg");
 
-
 figure(4);
 subplot(1,2,1);
 imshow(input_image);
