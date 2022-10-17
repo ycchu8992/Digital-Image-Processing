@@ -14,3 +14,18 @@ imwrite(uint8(output),"ImageSharpendKernalA.jpg");
 B = [1,1,1;1,-8,1;1,1,1];
 [output, scaledLaplacian] = laplacianFiltering(inputImage, B, -1);
 imwrite(uint8(output),"ImageSharpendKernalB.jpg");
+
+
+[output1, scaledLaplacian] = laplacianFiltering(inputImage, B, -2);
+[output2, scaledLaplacian] = laplacianFiltering(inputImage, B, -3);
+[output3, scaledLaplacian] = laplacianFiltering(inputImage, B, -4);
+fig = figure(1);
+subplot(1,3,1);
+imshow(uint8(output));
+title(sc2.jpg");
+
+subplot(1,3,2);
+imshow(uint8(output),"ImageSharpendKernal3.jpg");
+
+subplot(1,3,3);
+imshow(uint8(output),"ImageSharpendKernal4.jpg");
